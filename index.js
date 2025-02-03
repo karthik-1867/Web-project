@@ -1,10 +1,10 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
-const userRoute = require("../Youtube_server/routes/users");
-const videoRoute = require("../Youtube_server/routes/video");
-const commentRoute = require("../Youtube_server/routes/comments");
-const authRoute = require("../Youtube_server/routes/auth");
+const userRoute = require("./routes/users");
+const videoRoute = require("./routes/video");
+const commentRoute = require("./routes/comments");
+const authRoute = require("./routes/auth");
 const cookieParser = require("cookie-parser");
 const cors = require('cors');
 
