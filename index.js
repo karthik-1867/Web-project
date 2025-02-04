@@ -32,6 +32,13 @@ app.listen(8800,()=>{
 app.use(cookieParser());
 app.use(cors());
 
+app.set("trust proxy", 1);
+
+app.use(cors({
+  origin: "https://youtube-clone-rflf.onrender.com",
+  credentials: true,
+}));
+
 //for parsing req bodies
 app.use(express.json());
 
