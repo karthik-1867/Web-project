@@ -27,17 +27,16 @@ app.listen(8800,()=>{
     console.log(process.env.MONGO_URL)
 })
 
-
-//cookie parser 
-app.use(cookieParser());
-app.use(cors());
-
 app.set("trust proxy", 1);
 
 app.use(cors({
   origin: "https://youtube-clone-rflf.onrender.com",
   credentials: true,
 }));
+
+//cookie parser 
+app.use(cookieParser());
+
 
 //for parsing req bodies
 app.use(express.json());
