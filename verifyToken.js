@@ -6,6 +6,7 @@ const verifyToken = (req,res,next) => {
     console.log(req.cookies)
     const token = req.cookies.access_token
 
+    console.log(token)
     if(!token) return next(createError(401,"Unauthenticated user"));
 
     jwt.verify(token,process.env.JWT,(err,user)=>{

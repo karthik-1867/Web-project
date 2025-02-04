@@ -48,7 +48,9 @@ const googleAuth = async (req,res,next) => {
        if(user){
          const token = jwt.sign({id:user._id},process.env.JWT);
          return res.cookie("access_token",token,{
-            httpOnly:true
+            httpOnly:true,
+            secure: true,          
+            sameSite: "None"
         }).status(200).send(user._doc);
        }else{
          const newUser = new User({
